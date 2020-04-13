@@ -1,0 +1,11 @@
+.wrapper {
+  background: #fff;
+  margin: 0 0 2em 0;
+  padding: 6em 0 6em 0;
+
+  &.style1 {}
+
+  &.style2 {
+    padding-top: 0;
+  }
+}

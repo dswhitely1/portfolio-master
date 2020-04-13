@@ -1,0 +1,35 @@
+section, article {
+  margin-bottom: 3em;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &.special > {
+    header, footer {
+      text-align: center;
+    }
+  }
+}
+
+.row > {
+  section, article {
+    margin-bottom: 0;
+  }
+}
+
+header {
+  margin: 0 0 1em 0;
+
+  > p {
+    display: block;
+    font-size: 1.5em;
+    margin: 1em 0 2em 0;
+    line-height: 1.5em;
+    text-align: inherit;
+  }
+}
+
+footer {
+  margin: 2.5em 0 0 0;
+}

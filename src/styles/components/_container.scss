@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1440px;
+
+  @include breakpoint('<=wide') {
+    width: 1200px;
+  }
+
+  @include breakpoint('<=normal') {
+    width: 100%;
+  }
+
+  @include breakpoint('<=narrow') {
+    width: 100%;
+  }
+
+  @include breakpoint('<=narrower') {
+    width: 100%;
+  }
+
+  @include breakpoint('<=mobile') {
+    width: 100%;
+  }
+}

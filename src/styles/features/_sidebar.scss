@@ -1,0 +1,14 @@
+#sidebar > {
+  hr {
+    top: 3em;
+    margin-bottom: 6em;
+
+    &.first {
+      display: none;
+    }
+  }
+
+  section {
+    margin-bottom: 0;
+  }
+}

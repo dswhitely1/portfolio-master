@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+
+  &.default {
+    width: 100%;
+
+    tbody {
+      tr {
+        border-top: solid 1px #E5E5E5;
+
+        &:first-child {
+          border-top: 0;
+        }
+
+        &:nth-child(2n+1) {
+          background: #fafafa;
+        }
+      }
+    }
+
+    td {
+      padding: 0.5em 1em 0.5em 1em;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 400;
+      padding: 0.5em 1em 0.5em 1em;
+    }
+
+    thead {
+      border-bottom: solid 2px #E5E5E5;
+    }
+
+    tfoot {
+      border-top: solid 2px #E5E5E5;
+    }
+  }
+}
