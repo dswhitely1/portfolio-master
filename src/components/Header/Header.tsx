@@ -16,7 +16,7 @@ function Header() {
                     <a href="#banner" className="button circled scrolly">Start</a>
                 </footer>
             </div>
-            {/*<Navigation/>*/}
+            <Navigation/>
         </div>
     )
 }

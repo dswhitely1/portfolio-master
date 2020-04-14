@@ -37,7 +37,7 @@
       position: absolute;
       top: 50%;
       margin: -1.5em 0 0 0;
-       background: url('images/arrow.svg') no-repeat center center;
+       background: url('./images/arrow.svg') no-repeat center center;
     }
 
     &:hover {
@@ -68,7 +68,7 @@
 
     &:after {
       left: -0.25em;
-      @include vendor('transform', 'scaleX(-1)');
+      transform: scaleX(-1);
     }
   }
 
@@ -88,7 +88,7 @@
     margin: 0 2em 0 0;
     white-space: normal;
     opacity: 1.0;
-    @include vendor('transition', 'opacity 0.75s ease-in-out');
+    transition: opacity 0.75s ease-in-out;
 
     &.loading {
       opacity: 0;

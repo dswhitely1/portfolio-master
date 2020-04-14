@@ -21,12 +21,9 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "build-task:scss-compile": "node-sass-chokidar --source-map true src/styles/ -o src/styles/css",
-    "build-task:autoprefixer": "postcss src/styles/css/*.css --use autoprefixer -d src/css",
-    "sass:build": "npm-run-all -p build-task:*",
-    "sass:watch": "chokidar \"src/styles/**/*.scss\" -c \"npm run sass:build\"",
     "dev": "npm-run-all -p sass:*",
     "start": "react-scripts start",
+    "prebuild": "rimraf build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -37,14 +34,14 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">1%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
     ]
   },
   "jest": {
