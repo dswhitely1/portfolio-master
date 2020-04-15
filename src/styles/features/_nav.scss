@@ -47,9 +47,6 @@
       border: solid 1px transparent;
       transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 
-      &.active {
-        border-color: rgba(192, 192, 192, 0.35);
-      }
 
       > a, > span {
         display: block;
@@ -57,6 +54,11 @@
         text-decoration: none;
         border: 0;
         outline: 0;
+
+        &.active {
+          color: #df7366;
+          border-color: rgba(192, 192, 192, 0.35);
+        }
       }
 
       > ul {
