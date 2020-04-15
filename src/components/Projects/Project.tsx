@@ -15,8 +15,12 @@ function Project(props: ProjectLink) {
                 </h3>
             </header>
             <p>{props.description}</p>
-            <span className="github-font">{`Backend Repository ->`}</span>
+
             <ul className="icons">
+
+                <li>
+                    <span className="github-font">{`Server ->`}</span>
+                </li>
                 <li>
                     <a href={props.githubBe} className="icon brands fa-github">
                         <span className="label">
@@ -31,8 +35,11 @@ function Project(props: ProjectLink) {
                         </span>
                     </a>
                 </li>
+                <li>
+                    <span className="github-font">{`<- Client`}</span>
+                </li>
             </ul>
-            <span className="github-font">{`<- Front End Repository`}</span>
+
         </article>
     )
 }
