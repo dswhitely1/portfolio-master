@@ -35,7 +35,7 @@
   }
 }
 
-@include breakpoint('<=wide') {
+@include media-breakpoint-down('xxl') {
   #projects {
     .article {
       width: 45%;
@@ -43,7 +43,7 @@
   }
 }
 
-@include breakpoint('<=narrow') {
+@include media-breakpoint-down('md') {
   #projects {
     .article {
       padding: 0;
