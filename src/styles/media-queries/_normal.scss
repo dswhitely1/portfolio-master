@@ -1,4 +1,4 @@
-@include breakpoint('<=normal') {
+@include media-breakpoint-down('xl') {
   body, input, textarea, select {
     font-size: 12pt;
     line-height: 1.5em;

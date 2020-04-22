@@ -1,4 +1,4 @@
-@include breakpoint('<=narrower') {
+@include media-breakpoint-down('md') {
   body, input, textarea, select {
     font-size: 13pt;
     line-height: 1.65em;
