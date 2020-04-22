@@ -3,7 +3,7 @@ form {
     display: block;
     font-weight: 400;
     color: #483949;
-    margin: 0 0 1em 0;
+    margin: 0 0 1rem 0;
   }
 
   input[type="text"], input[type="email"], input[type="password"], select, textarea {
@@ -11,7 +11,7 @@ form {
     display: block;
     background: #fafafa;
     width: 100%;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     border: solid 1px #E5E5E5;
     padding: 1em;
     transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
@@ -23,11 +23,11 @@ form {
   }
 
   input[type="text"], input[type="email"], input[type="password"], select {
-    line-height: 1em;
+    line-height: 1rem;
   }
 
   textarea {
-    min-height: 9em;
+    min-height: 9rem;
   }
 
   ::-webkit-input-placeholder {
