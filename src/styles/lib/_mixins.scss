@@ -23,12 +23,10 @@
 
     @if ($category == brands) {
       font-family: 'Font Awesome 5 Brands';
-    }
-    @elseif ($category == solid) {
+    } @else if ($category == solid) {
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
-    }
-    @else {
+    } @else {
       font-family: 'Font Awesome 5 Free';
       font-weight: 400;
     }
@@ -75,4 +73,117 @@
 
   @return url("data:image/svg+xml;charset=utf8,#{$svg}");
 
+}
+
+@mixin create_container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin create_container_max_widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin create_row($gutter: $grid-gutter-width) {
+  --bs-gutter-x: #{$gutter};
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+@mixin make-col-ready($gutter: $grid-gutter-width) {
+  box-sizing: if(variable_exists(include-column-box-sizing) and $include-column-box-sizing, border-box, null);
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  margin-top: var(--bs-gutter-y);
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 auto;
+  width: percentage($size / $columns);
+}
+
+@mixin make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin row-cols($count) {
+  & > * {
+    flex: 0 0 auto;
+    width: 100% / $count;
+  }
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      .col#{$infix} {
+        flex: 1 0 0%;
+        min-width: 0;
+      }
+
+      .row-cols#{$infix} {
+        @include make-col-auto();
+      }
+
+      @if $grid-row-columns > 0 {
+        @for $i from 1 through $grid-row-columns {
+          .row-cols#{$infix}-#{$i} {
+            @include row-cols($i);
+          }
+        }
+      }
+
+      .col#{$infix}-auto {
+        @include make-col-auto();
+      }
+
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .col#{$infix}-#{$i} {
+            @include make-col($i, $columns);
+          }
+        }
+
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == "" and $i == 0) {
+            .offset#{$infix}-#{$i} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+
+      @each $key, $value in $gutters {
+        .g#{infix}-#{$key}, .gx#{$infix}-#{$key} {
+          --bs-gutter-x: #{$value};
+        }
+
+        .g#{$infix}-#{$key}, .gy#{$infix}-#{$key} {
+          --bs-gutter-y: #{$value};
+        }
+      }
+    }
+  }
 }
