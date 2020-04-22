@@ -6,13 +6,17 @@ html {
   box-sizing: inherit;
 }
 
+%font-default {
+  @include font-size($font-base-size);
+  line-height: $line-height;
+  font-family: $font-family-base;
+  font-weight: $font-weight-light;
+}
+
 body {
   background: #f0f4f4;
   color: #5b5b5b;
-  font-size: 15pt;
-  line-height: 1.85em;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  @extend %font-default;
 
   &.is-preload {
     *, *:before, *:after {
@@ -22,44 +26,65 @@ body {
 }
 
 input, textarea, select {
-  font-size: 15pt;
-  line-height: 1.85em;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  @extend %font-default;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+%strong {
+  font-weight: $font-weight-normal;
   color: #483949;
-  line-height: 1.25em;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+%link {
   color: inherit;
   text-decoration: none;
-  border-bottom-color: transparent;
 }
 
-h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-  font-weight: 600;
+%heading {
+  @extend %strong;
+  line-height: $line-height-sm;
+
+  & a {
+    @extend %link;
+    border-bottom-color: transparent;
+  }
+
+  & strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+h1 {
+  @extend %heading;
+  @include font-size($h1-font-size);
 }
 
 h2 {
-  font-size: 2.85em;
+  @extend %heading;
+  @include font-size($h2-font-size);
 }
 
 h3 {
-  font-size: 1.25em;
+  @extend %heading;
+  @include font-size($h3-font-size);
 }
 
 h4 {
-  font-size: 1em;
-  margin: 0 0 0.25em 0;
+  @extend %heading;
+  @include font-size($h4-font-size);
+}
+
+h5 {
+  @extend %heading;
+  @include font-size($h5-font-size);
+}
+
+h6 {
+  @extend %heading;
+  @include font-size($h6-font-size);
 }
 
 strong, b {
-  font-weight: 400;
-  color: #483949;
+  @extend %strong;
 }
 
 em, i {
@@ -67,9 +92,8 @@ em, i {
 }
 
 a {
-  color: inherit;
+  @extend %link;
   border-bottom: solid 1px rgba(128, 128, 128, 0.15);
-  text-decoration: none;
   transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 
   &:hover {
@@ -78,26 +102,29 @@ a {
   }
 }
 
-sub {
+%subset {
   position: relative;
+  @include font-size($font-base-sm);
+}
+
+sub {
+  @extend %subset;
   top: 0.5em;
-  font-size: 0.8em;
 }
 
 sup {
-  position: relative;
+  @extend %subset;
   top: -0.5em;
-  font-size: 0.8em;
 }
 
 blockquote {
-  border-left: solid 0.5em #ddd;
-  padding: 1em 0 1em 2em;
+  border-left: solid 0.5rem #ddd;
+  padding: 1rem 0 1rem 2rem;
   font-style: italic;
 }
 
 p, ul, ol, dl, table {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -112,8 +139,8 @@ hr {
   position: relative;
   display: block;
   border: 0;
-  top: 4.5em;
-  margin-bottom: 9em;
+  top: 4.5rem;
+  margin-bottom: 9rem;
   height: 6px;
   border-top: solid 1px rgba(128, 128, 128, 0.2);
   border-bottom: solid 1px rgba(128, 128, 128, 0.2);
@@ -139,5 +166,5 @@ hr {
 
 .timestamp {
   color: rgba(128, 128, 128, 0.75);
-  font-size: 0.8em;
+  font-size: $font-base-sm;
 }
