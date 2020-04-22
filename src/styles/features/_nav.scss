@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   text-align: center;
-  padding: 1.5em 0 1.5em 0;
+  padding: 1.5rem 0 1.5rem 0;
   z-index: 1;
   overflow: hidden;
 
@@ -41,9 +41,9 @@
 
     > li {
       display: inline-block;
-      margin: -9px 0.5em 0 0.5em;
-      border-radius: 0.5em;
-      padding: 0.85em;
+      margin: -9px 0.5rem 0 0.5rem;
+      border-radius: 0.5rem;
+      padding: 0.85rem;
       border: solid 1px transparent;
       transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 
@@ -70,14 +70,14 @@
 
 .dropotron {
   background: rgba(255, 255, 255, 0.975);
-  padding: 1em 1.25em 1em 1.25em;
-  line-height: 1em;
+  padding: 1rem 1.25rem 1rem 1.25rem;
+  line-height: 1rem;
   height: auto;
   text-align: left;
-  border-radius: 0.5em;
-  box-shadow: 0 0.15em 0.25em 0 rgba(0, 0, 0, 0.25);
-  min-width: 12em;
-  margin-top: -1em;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.15rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  min-width: 12rem;
+  margin-top: -1rem;
   list-style: none;
 
   li {
@@ -96,24 +96,24 @@
     a, span {
       display: block;
       border: 0;
-      padding: 0.5em 0 0.5em 0;
+      padding: 0.5rem 0 0.5rem 0;
       transition: color 0.35s ease-in-out;
     }
   }
 
   &.level-0 {
-    margin-top: 2em;
-    font-size: 0.9em;
+    margin-top: 2rem;
+    font-size: 0.9rem;
 
     &:before {
       content: '';
       position: absolute;
       left: 50%;
-      top: -0.7em;
-      margin-left: -0.75em;
-      border-bottom: solid 0.75em rgba(255, 255, 255, 0.975);
-      border-left: solid 0.75em rgba(64, 64, 64, 0);
-      border-right: solid 0.75em rgba(64, 64, 64, 0);
+      top: -0.7rem;
+      margin-left: -0.75rem;
+      border-bottom: solid 0.75rem rgba(255, 255, 255, 0.975);
+      border-left: solid 0.75rem rgba(64, 64, 64, 0);
+      border-right: solid 0.75rem rgba(64, 64, 64, 0);
     }
   }
 }
