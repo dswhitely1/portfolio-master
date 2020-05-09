@@ -1,9 +1,0 @@
-.row {
-  @include create_row();
-
-  > * {
-    @include make-col-ready();
-  }
-}
-
-@include make-grid-columns();
