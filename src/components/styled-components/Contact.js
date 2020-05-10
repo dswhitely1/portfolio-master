@@ -11,6 +11,10 @@ export const Line = styled.div`
     border-top: 1px solid #203A4C;
     width: 53.4rem;
     opacity: 0.15;
+    
+    @media (max-width: 768px) {
+        width: 11.3rem;
+    }
 `;
 
 export const ContactHeader = styled.div`

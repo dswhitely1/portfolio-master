@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Image = styled.img`
-    width: 54rem;
+    max-width: 54rem;
+    width: 100%;
     height: auto;
+    
+    @media (max-width: 768px) {
+        width: 40%;
+        height: 60rem;
+    }
 `;

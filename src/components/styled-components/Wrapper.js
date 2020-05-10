@@ -9,4 +9,9 @@ export const Wrapper = styled.div`
         justify-content: flex-start;
         align-items: end;
     `}
+    
+    @media (max-width: 768px) {
+        margin-left: 3.9rem;
+        margin-right: 4rem;
+    }
 `;
