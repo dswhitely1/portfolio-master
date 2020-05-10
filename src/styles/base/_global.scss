@@ -20,6 +20,7 @@ body {
 
 %headings-bold {
   font-weight: 600;
+  line-height: 1.05;
 }
 
 %body {
@@ -31,7 +32,6 @@ h1 {
   @extend %headings;
   @extend %headings-bold;
   font-size: 5rem;
-  line-height: 1;
   letter-spacing: -0.45px;
 }
 
@@ -39,7 +39,6 @@ h2 {
   @extend %headings-bold;
   @extend %headings;
   font-size: 4rem;
-  line-height: 1.05;
   letter-spacing: -0.36px;
 }
 
