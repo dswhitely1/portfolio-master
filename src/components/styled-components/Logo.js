@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-export const Logo = styled.svg`
+export const SVG = styled.svg`
     fill: #33323D;
     
     ${props => props.inverted && css`

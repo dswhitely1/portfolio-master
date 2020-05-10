@@ -5,6 +5,7 @@ import Navigation from "./nav/Navigation";
 import Hero from "./hero/Hero";
 import About from "./about/About";
 import Contact from "./contact/Contact";
+import Footer from "./footer/Footer";
 
 const App = () => (
     <Container>
@@ -14,6 +15,7 @@ const App = () => (
             <About/>
             <Contact/>
         </Wrapper>
+        <Footer />
     </Container>
 )
 
