@@ -17,7 +17,6 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "dev": "npm-run-all -p sass:*",
     "start": "react-scripts start",
     "prebuild": "rimraf build",
     "build": "react-scripts build",
