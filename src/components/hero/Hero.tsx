@@ -13,7 +13,9 @@ const Hero = () => (
         <HeroImg mobile src={HeroMobileImage} alt="IMac displaying a webpage"/>
         <Header>
             <h1>Hey, I’m Donald Whitely and I love building beautiful websites</h1>
-            <Button primary>About Me</Button>
+            <Button primary>
+                About Me
+            </Button>
         </Header>
     </HeroContainer>
 );

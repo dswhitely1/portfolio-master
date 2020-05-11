@@ -5,14 +5,38 @@ export const Links = styled.div`
     justify-content: space-between;
     font-size: 1.2rem;
     width: 26.4rem;
+    text-transform: uppercase;
+    
+    ${props => props.nav && css`
+        display: none;
+        @media (min-width: 501px) {
+          display: inherit;
+        }
+    `}
     
     ${props => props.icons && css`
         width: 10.4rem;
-        margin-left: auto;
+        padding-bottom: 5.6rem;
+        @media (min-width: 501px) {
+            padding-bottom: 0;
+            margin-left: auto;
+        }
     `}
     
     ${props => props.footer && css`
-        margin-left: 10rem;
-        width: 30.9rem;
+        flex-direction: column;
+        align-items: center;
+        margin: 4rem auto;
+        height: 10.6rem;
+        @media (min-width: 501px) {
+            flex-direction: row;
+            margin-left: 4.892rem;
+            width: 30.9rem;
+            height: auto;
+        }
+        
+        @media (min-width: 769px) {
+            margin-left: 10rem;
+        }
     `}
 `;

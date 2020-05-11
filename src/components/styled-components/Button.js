@@ -7,7 +7,10 @@ export const Button = styled.div`
     font-size: 1.2rem;
     font-weight: 100;
     width: 20rem;
-    text-align: center;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
     
     ${props => props.primary && css`
         background-color: #20394C;

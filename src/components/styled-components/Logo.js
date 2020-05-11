@@ -5,5 +5,11 @@ export const SVG = styled.svg`
     
     ${props => props.inverted && css`
         fill: #ffffff;
-    `}
+    `};
+    
+    ${props => props.hamburger && css`
+        @media (min-width: 501px) {
+          display: none;
+        }
+    `};
 `;

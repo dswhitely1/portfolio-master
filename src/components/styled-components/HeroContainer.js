@@ -3,7 +3,11 @@ import styled, {css} from "styled-components";
 export const HeroContainer = styled.div`
     width: 100%;
     height: auto;
-    margin-bottom: 15rem;
+    margin-bottom: 3.2rem;
+    
+    @media (min-width: 501px) {
+      margin-bottom: 15rem;
+    }
 `;
 
 export const HeroImg = styled.img`
@@ -11,26 +15,28 @@ export const HeroImg = styled.img`
     height: auto;
     
     ${props => props.desktop && css`
-        @media (max-width: 768px) {
-            display: none;
+        display: none;
+        @media (min-width: 769px) {
+            display: inherit;
         }
     `}
     
     ${props => props.tablet && css`
       display: none;
       
-      @media (max-width: 768px) {
+      @media (min-width: 501px) {
         display: inherit;
       }
-      @media (max-width: 500px) {
+      @media (min-width: 769px) {
         display: none
       }
     `}
     
     ${props => props.mobile && css`
-      display: none;
-      @media (max-width: 500px) {
-        display: inherit;
+      margin-bottom: 3.2rem;
+      @media (min-width: 501px) {
+        display: none;
+        margin-bottom: 0;
       }
     `}
    `;

@@ -3,5 +3,9 @@ import styled from "styled-components";
 export const FooterContainer = styled.footer`
     color: #fafafa;
     background-color: #203A4C;
-    padding: 3.5rem 0;
+    
+    @media (min-width: 501px) {
+      padding: 3.5rem 0;  
+    }
+    
 `;
