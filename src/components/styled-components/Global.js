@@ -12,7 +12,7 @@ export const Global = css`
     
     body {
       background-color: #fafafa;
-      color: #33323e;
+      color: #33323d;
       font-size: 1.6rem;
       line-height: 1.5;
       font-family: 'Public Sans', sans-serif;
@@ -40,5 +40,9 @@ export const Global = css`
     h3 {
       font-size: 3.2rem;
       letter-spacing: -0.29px;
+    }
+    
+    input, textarea, button {
+      border: none;
     }
 `;

@@ -11,7 +11,7 @@ const Navigation = () => (
         <Links nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/portfolio">Portfolio</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact">Contact Me</NavLink>
         </Links>
         <Hamburger/>
     </Nav>

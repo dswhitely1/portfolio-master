@@ -12,4 +12,8 @@ export const SVG = styled.svg`
           display: none;
         }
     `};
+    
+    &:hover {
+      fill: rgb(95, 180, 162);
+    }
 `;
