@@ -6,6 +6,7 @@ import Navigation from "./nav/Navigation";
 import Footer from "./footer/Footer";
 import LandingPage from "./landing-page/LandingPage";
 import {GlobalStyle} from "./styled-components/GlobalStyle";
+import ContactPage from "./contact-page/ContactPage";
 
 const App = () => (
     <>
@@ -14,6 +15,7 @@ const App = () => (
             <Wrapper>
                 <Navigation/>
                 <Switch>
+                    <Route path="/contact" component={ContactPage} />
                     <Route exact path="/" component={LandingPage}/>
                 </Switch>
             </Wrapper>

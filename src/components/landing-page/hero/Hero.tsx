@@ -2,9 +2,9 @@ import React from "react";
 import HeroDesktopImage from 'assets/hero-desktop.jpg'
 import HeroTabletImage from 'assets/hero-tablet.jpg'
 import HeroMobileImage from 'assets/hero-mobile.jpg'
-import {HeroContainer, HeroImg} from "../styled-components/HeroContainer";
-import {Header} from "../styled-components/Header";
-import {Button} from "../styled-components/Button";
+import {HeroContainer, HeroImg} from "../../styled-components/HeroContainer";
+import {Header} from "../../styled-components/Header";
+import {Button} from "../../styled-components/Button";
 
 const Hero = () => (
     <HeroContainer>

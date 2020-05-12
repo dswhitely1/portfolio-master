@@ -1,6 +1,6 @@
 import React from 'react';
-import {ContactContainer, ContactHeader, Line} from "../styled-components/Contact";
-import {Button} from "../styled-components/Button";
+import {ContactContainer, ContactHeader, Line} from "../../styled-components/Contact";
+import {Button} from "../../styled-components/Button";
 
 const Contact = () => (
     <ContactContainer>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Don from 'assets/Don.png'
-import {Image} from "../styled-components/Image";
-import {AboutContainer, AboutMeContainer} from "../styled-components/AboutContainer";
-import {Button} from "../styled-components/Button";
+import {Image} from "../../styled-components/Image";
+import {AboutContainer, AboutMeContainer} from "../../styled-components/AboutContainer";
+import {Button} from "../../styled-components/Button";
 
 const About = () => (
     <AboutContainer>
