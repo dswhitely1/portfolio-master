@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialMediaLinks from "../../icons/SocialMediaLinks";
 
 const ContactHeader = () => (
     <>
@@ -9,7 +10,10 @@ const ContactHeader = () => (
             opportunities that don’t fit that description. I’m a hard-working and positive person
             who will always approach each task with a sense of purpose and attention to detail.
             Please do feel free to check out my online profiles below and get in touch using the form.</p>
-        </>
-)
+        <div>
+            <SocialMediaLinks/>
+        </div>
+    </>
+);
 
 export default ContactHeader

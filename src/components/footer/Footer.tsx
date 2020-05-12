@@ -8,6 +8,7 @@ import Logo from "../icons/Logo";
 import Github from "../icons/Github";
 import LinkedIn from "../icons/LinkedIn";
 import Twitter from "../icons/Twitter";
+import SocialMediaLinks from "../icons/SocialMediaLinks";
 
 const Footer = () => (
     <FooterContainer>
@@ -19,9 +20,7 @@ const Footer = () => (
                 <Link to="/contact">Contact</Link>
             </Links>
             <Links icons>
-                <Github inverted />
-                <LinkedIn inverted />
-                <Twitter inverted />
+                <SocialMediaLinks inverted />
             </Links>
         </Wrapper>
     </FooterContainer>
