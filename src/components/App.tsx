@@ -7,21 +7,26 @@ import Footer from "./footer/Footer";
 import LandingPage from "./landing-page/LandingPage";
 import {GlobalStyle} from "./styled-components/GlobalStyle";
 import ContactPage from "./contact-page/ContactPage";
+import {ActionsProvider} from "../context/ActionsContext";
+import {useActions} from "../store/useActions";
 
-const App = () => (
-    <>
-        <GlobalStyle/>
-        <Container>
-            <Wrapper>
-                <Navigation/>
-                <Switch>
-                    <Route path="/contact" component={ContactPage} />
-                    <Route exact path="/" component={LandingPage}/>
-                </Switch>
-            </Wrapper>
-            <Footer/>
-        </Container>
-    </>
-);
+const App = () => {
+    const actions = useActions();
+    return (
+        <ActionsProvider value={actions}>
+            <GlobalStyle/>
+            <Container>
+                <Wrapper>
+                    <Navigation/>
+                    <Switch>
+                        <Route path="/contact" component={ContactPage}/>
+                        <Route exact path="/" component={LandingPage}/>
+                    </Switch>
+                </Wrapper>
+                <Footer/>
+            </Container>
+        </ActionsProvider>
+    );
+};
 
 export default App;

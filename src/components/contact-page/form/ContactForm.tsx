@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {formData} from "./formData";
 import InputElement from "./InputElement";
 import {ContactFormContainer, Content, FormButton} from "./contact-form.styles";
 import {useForm} from "../../../hooks/useForm";
+import {ActionsContext} from "../../../context/ActionsContext";
+import {useSelector} from "react-redux";
+import {AppState} from "../../../store/reducers";
 
 const ContactForm = () => {
+    const actions = useContext(ActionsContext);
+    const {isLoading, isSuccess} = useSelector((state: AppState) => state.contact);
     const [values, handleChange, handleSubmit, handleReset] = useForm({
         name: '', email: '', message: ''
     }, doSubmit);
+
+    useEffect(() => {
+        if (isSuccess) {
+            handleReset()
+            actions?.contact.resetSuccess()
+        }
+    }, [isSuccess])
 
     function doSubmit() {
         const msg = {
@@ -16,7 +28,7 @@ const ContactForm = () => {
             subject: `A message sent from ${values.name}, ${values.email}`,
             text: values.message
         };
-        console.log(msg)
+        actions?.contact.sendMessage(msg);
         // Have a handle Success that displays a message and resets the form
     }
 
@@ -29,7 +41,9 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit}>
                     {formData.map((data, id) => <InputElement values={values} data={data} handleChange={handleChange}
                                                               key={id}/>)}
-                    <FormButton type="submit">Send Message</FormButton>
+                    <FormButton disabled={isLoading} type="submit">
+                        {isLoading ? 'Sending' : 'Send Message'}
+                    </FormButton>
                 </form>
             </Content>
         </ContactFormContainer>

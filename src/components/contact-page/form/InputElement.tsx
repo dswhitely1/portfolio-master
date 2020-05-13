@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import {IFormData} from "./formData";
-import {IFormState} from "./ContactForm";
+import {IFormState} from "../../../hooks/useForm";
 import {InputGroup} from "./contact-form.styles";
 
 interface IProps {

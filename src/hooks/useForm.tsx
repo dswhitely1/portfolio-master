@@ -6,10 +6,12 @@ type FormChange = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =
 type FormSubmit = (event: FormEvent<HTMLFormElement>) => void
 type FormReset = () => void
 
-interface IFormState {
+export interface IFormState {
     name: string
     email: string
     message: string
+
+    [key: string]: string
 }
 
 interface UseFormReturn extends Array<FormState | FormChange | FormSubmit | FormReset> {
@@ -27,12 +29,12 @@ export const useForm: UseForm = (initialState, cb) => {
     const handleChange = ({target: {name, value}}: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => setValues({
         ...values,
         [name]: value
-    })
+    });
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         cb();
-    }
+    };
 
     const handleReset = () => setValues(initialState);
 
