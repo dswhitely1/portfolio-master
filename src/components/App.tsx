@@ -9,6 +9,8 @@ import {GlobalStyle} from "./styled-components/GlobalStyle";
 import ContactPage from "./contact-page/ContactPage";
 import {ActionsProvider} from "../context/ActionsContext";
 import {useActions} from "../store/useActions";
+import PortfolioOverview from "./portfolio/PortfolioOverview";
+import Contact from "./landing-page/contact/Contact";
 
 const App = () => {
     const actions = useActions();
@@ -20,8 +22,10 @@ const App = () => {
                     <Navigation/>
                     <Switch>
                         <Route path="/contact" component={ContactPage}/>
+                        <Route path="/portfolio" component={PortfolioOverview} />
                         <Route exact path="/" component={LandingPage}/>
                     </Switch>
+                <Contact />
                 </Wrapper>
                 <Footer/>
             </Container>
