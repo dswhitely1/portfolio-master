@@ -18,7 +18,7 @@ interface IProps {
     project: IPortfolioData
 }
 
-function PortfolioDetail({project: {image, title}}: IProps) {
+function PortfolioDetail({project: {image, title, link}}: IProps) {
     return (
         <>
             <Image detail src={image} alt={title}/>
@@ -30,7 +30,9 @@ function PortfolioDetail({project: {image, title}}: IProps) {
                         testimonial slider.</p>
                     <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
                     <DetailsTopics>HTML / CSS / JS</DetailsTopics>
-                    <Button secondary>Visit Website</Button>
+                    <a href={link} target='_blank' rel='noopener noreferrer'>
+                        <Button secondary>Visit Website</Button>
+                    </a>
                     <Divider/>
                 </DetailsLeftContainer>
                 <DetailsRightContainer>
@@ -47,13 +49,13 @@ function PortfolioDetail({project: {image, title}}: IProps) {
                 <NavigationItem>
                     <LeftArrow/>
                     <div>
-                        <h3>Title</h3>
+                        <h3>{title}</h3>
                         <p>Previous Project</p>
                     </div>
                 </NavigationItem>
                 <NavigationItem right>
                     <div>
-                        <h3>Title</h3>
+                        <h3>{title}</h3>
                         <p>Next Project</p>
                     </div>
                     <RightArrow/>
