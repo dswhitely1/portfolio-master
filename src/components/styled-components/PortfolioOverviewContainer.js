@@ -17,6 +17,10 @@ export const PortfolioOverviewContainer = styled.div`
             }
         }
     }
+    
+    @media (min-width: 769px) {
+        margin-bottom: 15rem;
+    }
 `;
 
 export const PortfolioWrapper = styled.div`
