@@ -5,13 +5,13 @@ import {PortfolioWrapper} from "../styled-components/PortfolioOverviewContainer"
 
 interface IProps {
     setProject: any
+    projects: IPortfolioData[]
 }
 
-function PortfolioOverview({setProject}:IProps) {
-    const [data] = useState<IPortfolioData[]>(portfolioData);
+function PortfolioOverview({setProject, projects}:IProps) {
     return (
         <PortfolioWrapper>
-            {data.map((d, i) => <PortfolioItem data={d} key={i} reverse={i % 2 !== 0} setProject={setProject}/>)}
+            {projects.map((d, i) => <PortfolioItem data={d} key={i} reverse={i % 2 !== 0} setProject={setProject}/>)}
         </PortfolioWrapper>
     )
 }

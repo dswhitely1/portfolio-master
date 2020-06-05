@@ -18,6 +18,7 @@ export const SVG = styled.svg`
     }
     
     ${props => props.mobile && css`
+        cursor: pointer;
         margin-bottom: 1.6rem;
         @media (min-width: 501px) {
             display: none;
@@ -26,7 +27,7 @@ export const SVG = styled.svg`
     
     ${props => props.desktop && css`
         display: none;
-        
+        cursor: pointer;
         @media (min-width: 501px) {
             display: inherit;
         }

@@ -5,6 +5,7 @@ import CreateReactProject from '../../assets/CreateReactProject.png'
 export interface IPortfolioData {
     title: string
     description: string
+    background: string
     techStack: string
     techUsed: string[]
     responsibilities: string[]
@@ -18,7 +19,8 @@ export interface IPortfolioData {
 export const portfolioData: IPortfolioData[] = [
     {
         title: 'Founder Grants',
-        description: 'A searchable website attached to a database that can feed users grants based on requirements they enter like the amount of the grant, the founder demographics, the geography of the grant, and the steps involved in getting the grant.',
+        description: 'Founder Grants is a searchable website attached to a database that can feed users grants based on requirements they enter like the amount of the grant, the founder demographics, the geography of the grant, and the steps involved in getting the grant.',
+        background: 'lorem',
         techStack: 'Built using React and Node Express.',
         techUsed: ['React', 'Redux', 'Node', 'Express', 'TypeScript', 'Auth0', 'PostgreSQL', 'Material-UI'],
         responsibilities: ['Increased performance of production site by 5%.', 'Refactored Code Base trimming 2000 lines of code.', 'Introduced TypeScript to help other developers understand how the data is flowing through the application.'],
@@ -31,6 +33,7 @@ export const portfolioData: IPortfolioData[] = [
     {
         title: 'Emergency Electric Inc',
         description: 'This project is a simple landing page with built in React and Material UI.  The website also has a way to send messages to the company and for prospective electricians to fill out an application for Employment.',
+        background: 'lorem',
         techStack: 'Built using React and Node Express',
         techUsed: ['React', 'Redux', 'Node', 'Express', 'PostgreSQL', 'Material-UI'],
         responsibilities: ['Built website to specification of Emergency Electric Owners', 'Created a way for future applicants to apply online.'],
@@ -43,6 +46,7 @@ export const portfolioData: IPortfolioData[] = [
     {
         title: 'Create React Project',
         description: 'This project was a way for developers to create a react app and install the latest dependencies.  It\'s intention is to save developers time.',
+        background: 'lorem',
         techStack: 'Built using React and Node Express',
         techUsed: ['JavaScript'],
         responsibilities: ['lorem ipsum', "lorem ipsum", 'lorem ipsum'],

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {useHistory, useLocation} from 'react-router-dom';
 import {IPortfolioData} from "./portfolioData";
 import {Image} from "../styled-components/Image";
 import {Button} from "../styled-components/Button";
@@ -16,10 +17,37 @@ import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
 
 interface IProps {
-    project: IPortfolioData
+    project: IPortfolioData,
+    projects: IPortfolioData[]
+    setProject: any
 }
 
-function PortfolioDetail({project: {image, title, link}}: IProps) {
+function PortfolioDetail({project: {image, title, link, background, description}, projects, setProject}: IProps) {
+    const history = useHistory()
+    const location = useLocation()
+    const [index, setIndex] = useState<{[key: string]: number}>(() => {
+        const currIndex = projects.findIndex(i => i.title === title);
+        const nextIndex = currIndex === projects.length - 1 ? 0 : currIndex + 1;
+        const prevIndex = currIndex === 0 ? projects.length - 1 : currIndex - 1;
+        return {
+            nextIndex, prevIndex
+        }
+    })
+
+    useEffect(() => {
+        const currIndex = projects.findIndex(i => i.title === title);
+        const nextIndex = currIndex === projects.length - 1 ? 0 : currIndex + 1;
+        const prevIndex = currIndex === 0 ? projects.length - 1 : currIndex - 1;
+        setIndex({nextIndex, prevIndex})
+    }, [location])
+
+
+    function handleClick(index: number) {
+        const data = projects[index];
+        setProject(data)
+        history.push(data.url)
+    }
+
     return (
         <>
             <Image detail src={image} alt={title}/>
@@ -27,11 +55,7 @@ function PortfolioDetail({project: {image, title, link}}: IProps) {
                 <DetailsLeftContainer>
                     <div>
                         <h2>{title}</h2>
-                        <DetailsLeftParagraph mobile>The project required me to build a fully responsive landing page to
-                            the designs provided. I used
-                            HTML5, along with CSS Grid and JavaScript for the area that required interactivity, such as
-                            the
-                            testimonial slider.</DetailsLeftParagraph>
+                        <DetailsLeftParagraph mobile>{description}</DetailsLeftParagraph>
                         <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
                         <DetailsTopics second>HTML / CSS / JS</DetailsTopics>
                         <a href={link} target='_blank' rel='noopener noreferrer'>
@@ -39,18 +63,13 @@ function PortfolioDetail({project: {image, title, link}}: IProps) {
                         </a>
                         <Divider mobile/>
                     </div>
-                    <DetailsLeftParagraph tablet>The project required me to build a fully responsive landing page to the
-                        designs provided. I used
-                        HTML5, along with CSS Grid and JavaScript for the area that required interactivity, such as the
-                        testimonial slider.</DetailsLeftParagraph>
+                    <DetailsLeftParagraph tablet>{description}</DetailsLeftParagraph>
 
                 </DetailsLeftContainer>
                 <Divider tablet/>
                 <DetailsRightContainer>
                     <h3>Project Background</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iure, neque quo reiciendis velit
-                        vero voluptatibus. Amet dicta fugiat, harum hic incidunt inventore laboriosam, laborum nihil
-                        nisi porro rerum tempora.</p>
+                    <p>{background}</p>
                     <h3>Static Previews</h3>
                     <Image first src={image} alt={title}/>
                     <Image second src={image} alt={title}/>
@@ -58,20 +77,20 @@ function PortfolioDetail({project: {image, title, link}}: IProps) {
             </DetailsContainer>
             <NavigationContainer>
                 <NavigationItem>
-                    <LeftArrow mode="mobile"/>
-                    <LeftArrow mode="desktop"/>
+                    <LeftArrow mode="mobile" handleClick={()=>handleClick(index.prevIndex)}/>
+                    <LeftArrow mode="desktop" handleClick={()=>handleClick(index.prevIndex)}/>
                     <div>
-                        <h3>{title}</h3>
+                        <h3>{projects[index.prevIndex].title}</h3>
                         <p>Previous Project</p>
                     </div>
                 </NavigationItem>
                 <NavigationItem right>
-                    <RightArrow mode='mobile'/>
+                    <RightArrow mode='mobile' handleClick={()=>handleClick(index.nextIndex)}/>
                     <div>
-                        <h3>{title}</h3>
+                        <h3>{projects[index.nextIndex].title}</h3>
                         <p>Next Project</p>
                     </div>
-                    <RightArrow mode='desktop'/>
+                    <RightArrow mode='desktop' handleClick={()=>handleClick(index.nextIndex)}/>
                 </NavigationItem>
             </NavigationContainer>
         </>
