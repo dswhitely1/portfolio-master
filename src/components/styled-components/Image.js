@@ -43,5 +43,9 @@ export const Image = styled.img`
             width: 100%;
             margin-bottom: 8rem;
         }
+        
+        @media (min-width: 769px) {
+            margin-bottom: 6.4rem;
+        }
     `}
 `;

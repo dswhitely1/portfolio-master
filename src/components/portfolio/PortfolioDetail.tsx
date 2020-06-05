@@ -4,7 +4,8 @@ import {Image} from "../styled-components/Image";
 import {Button} from "../styled-components/Button";
 import {
     DetailsContainer,
-    DetailsLeftContainer, DetailsLeftParagraph, DetailsLink,
+    DetailsLeftContainer,
+    DetailsLeftParagraph,
     DetailsRightContainer,
     DetailsTopics,
     Divider,
@@ -25,21 +26,26 @@ function PortfolioDetail({project: {image, title, link}}: IProps) {
             <DetailsContainer>
                 <DetailsLeftContainer>
                     <div>
-                    <h2>{title}</h2>
-                    <DetailsLeftParagraph mobile>The project required me to build a fully responsive landing page to the designs provided. I used
-                        HTML5, along with CSS Grid and JavaScript for the area that required interactivity, such as the
-                        testimonial slider.</DetailsLeftParagraph>
-                    <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
-                    <DetailsTopics second>HTML / CSS / JS</DetailsTopics>
-                    <a href={link} target='_blank' rel='noopener noreferrer'>
-                        <Button secondary spacing>Visit Website</Button>
-                    </a>
+                        <h2>{title}</h2>
+                        <DetailsLeftParagraph mobile>The project required me to build a fully responsive landing page to
+                            the designs provided. I used
+                            HTML5, along with CSS Grid and JavaScript for the area that required interactivity, such as
+                            the
+                            testimonial slider.</DetailsLeftParagraph>
+                        <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
+                        <DetailsTopics second>HTML / CSS / JS</DetailsTopics>
+                        <a href={link} target='_blank' rel='noopener noreferrer'>
+                            <Button secondary spacing>Visit Website</Button>
+                        </a>
+                        <Divider mobile/>
                     </div>
-                    <DetailsLeftParagraph tablet>The project required me to build a fully responsive landing page to the designs provided. I used
+                    <DetailsLeftParagraph tablet>The project required me to build a fully responsive landing page to the
+                        designs provided. I used
                         HTML5, along with CSS Grid and JavaScript for the area that required interactivity, such as the
                         testimonial slider.</DetailsLeftParagraph>
+
                 </DetailsLeftContainer>
-                <Divider />
+                <Divider tablet/>
                 <DetailsRightContainer>
                     <h3>Project Background</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iure, neque quo reiciendis velit
@@ -53,7 +59,7 @@ function PortfolioDetail({project: {image, title, link}}: IProps) {
             <NavigationContainer>
                 <NavigationItem>
                     <LeftArrow mode="mobile"/>
-                    <LeftArrow mode="desktop" />
+                    <LeftArrow mode="desktop"/>
                     <div>
                         <h3>{title}</h3>
                         <p>Previous Project</p>

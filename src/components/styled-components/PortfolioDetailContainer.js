@@ -2,11 +2,13 @@ import styled, {css} from "styled-components";
 
 export const DetailsContainer = styled.div`
     margin-top: 4rem;
-    border-top: 1px solid rgba(32,58,76,0.15);
-    padding-top: 2.4rem;
    
     h2 {
         margin-bottom: 2.4rem;
+        
+        @media (min-width: 769px) {
+            margin-bottom: 2.9rem;
+        }
     }
     
     p {
@@ -14,19 +16,27 @@ export const DetailsContainer = styled.div`
         margin-bottom: 2.4rem;
     }
     
-    @media (min-width: 501px) {
-        padding-top: 3.3rem;
+    @media (min-width: 769px) {
+        display: flex;
+        
     }
 `;
 
-export const DetailsLink = styled.a`
-    padding-bottom: 2.4rem;
-`;
-
 export const DetailsLeftContainer = styled.div`
+
+    border-top: 1px solid rgba(32,58,76,0.15);
+    padding-top: 2.4rem;
     @media (min-width: 501px) {
         display: flex;
         justify-content: space-between;
+        padding-top: 3.2rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    @media (min-width: 769px) {
+        display: inherit;
+        width: 35rem;
+        padding-top: 4.8rem;
     }
 `;
 
@@ -46,7 +56,7 @@ export const DetailsLeftParagraph = styled.p`
         
         @media (min-width: 501px) {
             display: inherit;
-            width: 50%;;
+            width: 50%;
         }
         
         @media (min-width: 769px) {
@@ -56,9 +66,33 @@ export const DetailsLeftParagraph = styled.p`
 `;
 
 export const Divider = styled.div`
-    border-top: 1px solid rgba(32,58,76,0.15);
+    border-bottom: 1px solid rgba(32,58,76,0.15);
+    
     ${props => props.spacing && css`
         margin-bottom: 4.8rem;
+    `}
+    
+    ${props => props.mobile && css`
+        @media (min-width: 501px) {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            display: inherit;
+            padding-top: 2.4rem;
+        }
+    `}
+    
+    ${props => props.tablet && css`
+        display: none;
+        
+        @media (min-width: 501px) {
+            display: inherit;
+        }
+        
+        @media (min-width: 769px) {
+            display: none;
+        }
     `}
 `;
 
@@ -71,19 +105,30 @@ export const DetailsRightContainer = styled.div`
     p {
         margin-bottom: 4rem;
     }
+    
+    @media (min-width: 769px) {
+        width: 63.5rem;
+        margin-left: 12.5rem;
+        padding-top: 0;
+    }
 `;
 
 export const DetailsTopics = styled.div`
     color: #5fB4A2;
     font-size: 1.3rem;
     font-weight: 700;
-    height: 3rem;
+    line-height: 1.875;
     ${props => props.first && css`
-        // margin-top: 2.3rem;
-        // margin-bottom: 1.6rem;
+        @media (min-width: 769px) {
+            margin-bottom: 1.6rem;
+        }
     `}
     ${props => props.second && css`
         margin-bottom: 2.4rem;
+        
+        @media (min-width: 769px) {
+            margin-bottom: 3.2rem;
+        }
     `}
 `;
 
@@ -96,6 +141,10 @@ export const NavigationContainer = styled.div`
     
     @media (min-width: 501px) {
         margin-bottom: 8rem;
+    }
+    
+    @media (min-width: 769px) {
+        margin-bottom: 11.5rem;
     }
 `;
 
