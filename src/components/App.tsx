@@ -14,6 +14,9 @@ import Contact from "./landing-page/contact/Contact";
 import PortfolioDetail from "./portfolio/PortfolioDetail";
 import {IPortfolioData, portfolioData} from "./portfolio/portfolioData";
 import EnsureDataRoute from "./EnsureDataRoute";
+import "./App.css"
+import AnimatedSwitch from "./routes/AnimatedSwitch";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
     const actions = useActions();
@@ -35,24 +38,11 @@ const App = () => {
     return (
         <ActionsProvider value={actions}>
             <GlobalStyle/>
+            <ScrollToTop />
             <Container>
                 <Wrapper>
                     <Navigation/>
-                    <Switch>
-                        <Route path="/contact" component={ContactPage}/>
-                        <EnsureDataRoute path="/portfolio/founder-grants" project={project} projects={projects}
-                                         setProject={setProject}
-                                         component={PortfolioDetail}/>
-                        <EnsureDataRoute path="/portfolio/emergency-electric-inc" project={project} projects={projects}
-                                         setProject={setProject}
-                                         component={PortfolioDetail}/>
-                        <EnsureDataRoute path="/portfolio/create-react-project" project={project} projects={projects}
-                                         setProject={setProject}
-                                         component={PortfolioDetail}/>} />
-                        <Route path="/portfolio"
-                               render={() => <PortfolioOverview setProject={setProject} projects={projects}/>}/>
-                        <Route exact path="/" component={LandingPage}/>
-                    </Switch>
+                    <AnimatedSwitch project={project} projects={projects} setProject={setProject} />
                     {location.pathname !== '/contact' && <Contact/>}
                 </Wrapper>
                 <Footer/>

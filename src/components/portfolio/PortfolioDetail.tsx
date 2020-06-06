@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {useHistory, useLocation} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Link, useHistory, useLocation} from 'react-router-dom';
 import {IPortfolioData} from "./portfolioData";
 import {Image} from "../styled-components/Image";
 import {Button} from "../styled-components/Button";
@@ -25,7 +25,7 @@ interface IProps {
 function PortfolioDetail({project: {image, title, link, background, description}, projects, setProject}: IProps) {
     const history = useHistory()
     const location = useLocation()
-    const [index, setIndex] = useState<{[key: string]: number}>(() => {
+    const [index, setIndex] = useState<{ [key: string]: number }>(() => {
         const currIndex = projects.findIndex(i => i.title === title);
         const nextIndex = currIndex === projects.length - 1 ? 0 : currIndex + 1;
         const prevIndex = currIndex === 0 ? projects.length - 1 : currIndex - 1;
@@ -77,20 +77,26 @@ function PortfolioDetail({project: {image, title, link, background, description}
             </DetailsContainer>
             <NavigationContainer>
                 <NavigationItem>
-                    <LeftArrow mode="mobile" handleClick={()=>handleClick(index.prevIndex)}/>
-                    <LeftArrow mode="desktop" handleClick={()=>handleClick(index.prevIndex)}/>
+                    <Link to={projects[index.prevIndex].url}>
+                        <LeftArrow mode="mobile" handleClick={() => handleClick(index.prevIndex)}/>
+                        <LeftArrow mode="desktop" handleClick={() => handleClick(index.prevIndex)}/>
+                    </Link>
                     <div>
                         <h3>{projects[index.prevIndex].title}</h3>
                         <p>Previous Project</p>
                     </div>
                 </NavigationItem>
                 <NavigationItem right>
-                    <RightArrow mode='mobile' handleClick={()=>handleClick(index.nextIndex)}/>
+                    <Link to={projects[index.nextIndex].url}>
+                        <RightArrow mode='mobile' handleClick={() => handleClick(index.nextIndex)}/>
+                    </Link>
                     <div>
                         <h3>{projects[index.nextIndex].title}</h3>
                         <p>Next Project</p>
                     </div>
-                    <RightArrow mode='desktop' handleClick={()=>handleClick(index.nextIndex)}/>
+                    <Link to={projects[index.nextIndex].url}>
+                        <RightArrow mode='desktop' handleClick={() => handleClick(index.nextIndex)}/>
+                    </Link>
                 </NavigationItem>
             </NavigationContainer>
         </>
