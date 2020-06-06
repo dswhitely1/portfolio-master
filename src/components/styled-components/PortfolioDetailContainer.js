@@ -118,6 +118,7 @@ export const DetailsTopics = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.875;
+    
     ${props => props.first && css`
         @media (min-width: 769px) {
             margin-bottom: 1.6rem;
@@ -125,9 +126,14 @@ export const DetailsTopics = styled.div`
     `}
     ${props => props.second && css`
         margin-bottom: 2.4rem;
-        
+        text-transform: uppercase;
         @media (min-width: 769px) {
             margin-bottom: 3.2rem;
+        }
+        
+        ul {
+            list-style: disc;
+            list-style-position: inside;
         }
     `}
 `;

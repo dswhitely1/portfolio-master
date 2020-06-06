@@ -8,6 +8,11 @@ import CreateReactProject from '../../assets/CreateReactProject.png'
 import CreateReactProject2 from '../../assets/CreateReactProject 2.png'
 import CreateReactProject1 from '../../assets/CreateReactProject 1.png'
 
+interface IGithub {
+    title: string
+    link: string
+}
+
 export interface IPortfolioData {
     title: string
     description: string
@@ -18,8 +23,7 @@ export interface IPortfolioData {
     link: string
     url: string
     image: string
-    githubFe: string | null
-    githubBe: string | null
+    github: IGithub[]
     image1: string
     image2: string
 }
@@ -34,8 +38,16 @@ export const portfolioData: IPortfolioData[] = [
         responsibilities: ['Increased performance of production site by 5%.', 'Refactored Code Base trimming 2000 lines of code.', 'Introduced TypeScript to help other developers understand how the data is flowing through the application.'],
         link: 'https://www.foundergrants.com',
         url: '/portfolio/founder-grants',
-        githubFe: 'https://github.com/dswhitely1/startup-grant-database-fe',
-        githubBe: 'https://github.com/dswhitely1/startup-grant-database-be',
+        github: [
+            {
+                title: 'React Repository',
+                link: 'https://github.com/dswhitely1/startup-grant-database-fe'
+            },
+            {
+                title: 'Node Repository',
+                link: 'https://github.com/dswhitely1/startup-grant-database-be'
+            }
+        ],
         image: FounderGrants,
         image1: FounderGrants1,
         image2: FounderGrants2
@@ -49,8 +61,16 @@ export const portfolioData: IPortfolioData[] = [
         responsibilities: ['Built website to specification of Emergency Electric Owners', 'Created a way for future applicants to apply online.'],
         link: 'https://www.emergencyelectricinc.com',
         url: '/portfolio/emergency-electric-inc',
-        githubFe: 'https://github.com/dswhitely1/emergency-client',
-        githubBe: 'https://github.com/dswhitely1/electric-server',
+        github: [
+            {
+                title: 'React Repository',
+                link: 'https://github.com/dswhitely1/emergency-client'
+            },
+            {
+                title: 'Node Repository',
+                link: 'https://github.com/dswhitely1/electric-server'
+            }
+        ],
         image: EmergencyElectric,
         image1: EmergencyElectric1,
         image2: EmergencyElectric2
@@ -64,8 +84,12 @@ export const portfolioData: IPortfolioData[] = [
         responsibilities: ['lorem ipsum', "lorem ipsum", 'lorem ipsum'],
         link: 'https://www.npmjs.com/package/@dswhitely1/create-react-project',
         url: '/portfolio/create-react-project',
-        githubFe: null,
-        githubBe: 'https://github.com/dswhitely1/create-react-project',
+        github: [
+            {
+                title: 'Source Code',
+                link: 'https://github.com/dswhitely1/create-react-project'
+            }
+        ],
         image: CreateReactProject,
         image1: CreateReactProject1,
         image2: CreateReactProject2

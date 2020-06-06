@@ -22,7 +22,7 @@ interface IProps {
     setProject: any
 }
 
-function PortfolioDetail({project: {image, image1, image2, title, link, background, description}, projects, setProject}: IProps) {
+function PortfolioDetail({project: {image, image1, image2, title, link, github, background, description, techUsed}, projects, setProject}: IProps) {
     const history = useHistory()
     const location = useLocation()
     const [index, setIndex] = useState<{ [key: string]: number }>(() => {
@@ -32,6 +32,16 @@ function PortfolioDetail({project: {image, image1, image2, title, link, backgrou
         return {
             nextIndex, prevIndex
         }
+    })
+
+    const [techList, setTechList] = useState<string>(() => {
+        const newArr: string[] = []
+        techUsed.forEach(item => {
+            newArr.push(item)
+            newArr.push('/')
+        })
+        newArr.pop()
+        return newArr.join(' ');
     })
 
     useEffect(() => {
@@ -57,10 +67,23 @@ function PortfolioDetail({project: {image, image1, image2, title, link, backgrou
                         <h2>{title}</h2>
                         <DetailsLeftParagraph mobile>{description}</DetailsLeftParagraph>
                         <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
-                        <DetailsTopics second>HTML / CSS / JS</DetailsTopics>
-                        <a href={link} target='_blank' rel='noopener noreferrer'>
-                            <Button secondary spacing>Visit Website</Button>
-                        </a>
+                        <DetailsTopics second>Technology Used:
+                            <ul>
+                                {techUsed.map((tech, index) => <li key={index}>{tech}</li>)}
+                            </ul>
+                        </DetailsTopics>
+                        {github.map(({title, link}, number) => (
+                            <Button secondary spacing>
+                                <a href={link} target='_blank' rel='noopener noreferrer'>
+                                    {title}
+                                </a>
+                            </Button>
+                        ))}
+                        <Button secondary spacing>
+                            <a href={link} target='_blank' rel='noopener noreferrer'>
+                                Visit Website
+                            </a>
+                        </Button>
                         <Divider mobile/>
                     </div>
                     <DetailsLeftParagraph tablet>{description}</DetailsLeftParagraph>
