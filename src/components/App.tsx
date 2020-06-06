@@ -32,7 +32,9 @@ const App = () => {
         url: '',
         githubFe: '',
         githubBe: '',
-        image: ''
+        image: '',
+        image1: '',
+        image2: ''
     });
     const [projects] = useState<IPortfolioData[]>(portfolioData);
     return (

@@ -12,7 +12,7 @@ interface IProps {
 }
 
 function PortfolioItem({reverse, data, setProject}: IProps) {
-    const {description, title, image, url} = data;
+    const {description, title, image1, url} = data;
     const history = useHistory();
 
     function handleClick() {
@@ -22,7 +22,7 @@ function PortfolioItem({reverse, data, setProject}: IProps) {
 
     return (
         <PortfolioOverviewContainer>
-            <Image src={image} alt={title}/>
+            <Image src={image1} alt={title}/>
             <PortfolioRightContainer reverse={reverse}>
                 <h2>{title}</h2>
                 <p>{description}</p>

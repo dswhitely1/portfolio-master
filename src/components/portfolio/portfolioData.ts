@@ -1,6 +1,12 @@
 import FounderGrants from '../../assets/Founder Grants.png'
+import FounderGrants1 from '../../assets/Founder Grants 1.png';
+import FounderGrants2 from '../../assets/Founder Grants 2.png';
 import EmergencyElectric from '../../assets/Emergency Electric.png';
+import EmergencyElectric1 from '../../assets/Emergency Electric 1.png';
+import EmergencyElectric2 from '../../assets/Emergency Electric 2.png';
 import CreateReactProject from '../../assets/CreateReactProject.png'
+import CreateReactProject2 from '../../assets/CreateReactProject 2.png'
+import CreateReactProject1 from '../../assets/CreateReactProject 1.png'
 
 export interface IPortfolioData {
     title: string
@@ -14,6 +20,8 @@ export interface IPortfolioData {
     image: string
     githubFe: string | null
     githubBe: string | null
+    image1: string
+    image2: string
 }
 
 export const portfolioData: IPortfolioData[] = [
@@ -28,7 +36,9 @@ export const portfolioData: IPortfolioData[] = [
         url: '/portfolio/founder-grants',
         githubFe: 'https://github.com/dswhitely1/startup-grant-database-fe',
         githubBe: 'https://github.com/dswhitely1/startup-grant-database-be',
-        image: FounderGrants
+        image: FounderGrants,
+        image1: FounderGrants1,
+        image2: FounderGrants2
     },
     {
         title: 'Emergency Electric Inc',
@@ -41,7 +51,9 @@ export const portfolioData: IPortfolioData[] = [
         url: '/portfolio/emergency-electric-inc',
         githubFe: 'https://github.com/dswhitely1/emergency-client',
         githubBe: 'https://github.com/dswhitely1/electric-server',
-        image: EmergencyElectric
+        image: EmergencyElectric,
+        image1: EmergencyElectric1,
+        image2: EmergencyElectric2
     },
     {
         title: 'Create React Project',
@@ -54,6 +66,8 @@ export const portfolioData: IPortfolioData[] = [
         url: '/portfolio/create-react-project',
         githubFe: null,
         githubBe: 'https://github.com/dswhitely1/create-react-project',
-        image: CreateReactProject
+        image: CreateReactProject,
+        image1: CreateReactProject1,
+        image2: CreateReactProject2
     }
 ]

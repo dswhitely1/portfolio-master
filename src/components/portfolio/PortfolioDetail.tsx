@@ -22,7 +22,7 @@ interface IProps {
     setProject: any
 }
 
-function PortfolioDetail({project: {image, title, link, background, description}, projects, setProject}: IProps) {
+function PortfolioDetail({project: {image, image1, image2, title, link, background, description}, projects, setProject}: IProps) {
     const history = useHistory()
     const location = useLocation()
     const [index, setIndex] = useState<{ [key: string]: number }>(() => {
@@ -71,8 +71,8 @@ function PortfolioDetail({project: {image, title, link, background, description}
                     <h3>Project Background</h3>
                     <p>{background}</p>
                     <h3>Static Previews</h3>
-                    <Image first src={image} alt={title}/>
-                    <Image second src={image} alt={title}/>
+                    <Image first src={image1} alt={title}/>
+                    <Image second src={image2} alt={title}/>
                 </DetailsRightContainer>
             </DetailsContainer>
             <NavigationContainer>
