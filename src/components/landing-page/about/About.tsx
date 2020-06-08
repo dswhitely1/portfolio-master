@@ -8,7 +8,7 @@ import {Button} from "../../styled-components/Button";
 const About = () => {
     const history = useHistory();
     return (
-    <AboutContainer>
+    <AboutContainer id='about'>
         <Image src={Don} alt="Donald Whitely"/>
         <AboutMeContainer>
             <h2>About Me</h2>
