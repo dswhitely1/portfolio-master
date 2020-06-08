@@ -11,7 +11,7 @@ import {
     DetailsTopics,
     Divider,
     NavigationContainer,
-    NavigationItem
+    NavigationItem, Responsibilities
 } from "../styled-components/PortfolioDetailContainer";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
@@ -22,7 +22,7 @@ interface IProps {
     setProject: any
 }
 
-function PortfolioDetail({project: {image, image1, image2, title, link, github, background, description, techUsed}, projects, setProject}: IProps) {
+function PortfolioDetail({project: {image, responsibilities, image1, image2, title, link, github, background, description, techUsed}, projects, setProject}: IProps) {
     const history = useHistory()
     const location = useLocation()
     const [index, setIndex] = useState<{ [key: string]: number }>(() => {
@@ -32,16 +32,6 @@ function PortfolioDetail({project: {image, image1, image2, title, link, github, 
         return {
             nextIndex, prevIndex
         }
-    })
-
-    const [techList, setTechList] = useState<string>(() => {
-        const newArr: string[] = []
-        techUsed.forEach(item => {
-            newArr.push(item)
-            newArr.push('/')
-        })
-        newArr.pop()
-        return newArr.join(' ');
     })
 
     useEffect(() => {
@@ -67,7 +57,7 @@ function PortfolioDetail({project: {image, image1, image2, title, link, github, 
                         <h2>{title}</h2>
                         <DetailsLeftParagraph mobile>{description}</DetailsLeftParagraph>
                         <DetailsTopics first>Interaction Design / Front End Development</DetailsTopics>
-                        <DetailsTopics second>Technology Used:
+                        <DetailsTopics second>Built using:
                             <ul>
                                 {techUsed.map((tech, index) => <li key={index}>{tech}</li>)}
                             </ul>
@@ -93,6 +83,10 @@ function PortfolioDetail({project: {image, image1, image2, title, link, github, 
                 <DetailsRightContainer>
                     <h3>Project Background</h3>
                     <p>{background}</p>
+                    <Responsibilities>Responsibilities:</Responsibilities>
+                    <ul>
+                        {responsibilities.map((listItem, index) => <li key={index}>{listItem}</li>)}
+                    </ul>
                     <h3>Static Previews</h3>
                     <Image first src={image1} alt={title}/>
                     <Image second src={image2} alt={title}/>

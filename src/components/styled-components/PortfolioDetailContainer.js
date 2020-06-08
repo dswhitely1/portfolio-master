@@ -111,6 +111,12 @@ export const DetailsRightContainer = styled.div`
         margin-left: 12.5rem;
         padding-top: 0;
     }
+    
+    ul {
+        list-style: disc;
+        list-style-position: inside;
+        margin-bottom: 4rem;
+    }
 `;
 
 export const DetailsTopics = styled.div`
@@ -185,3 +191,7 @@ export const NavigationItem = styled.div`
         }
     `}
 `;
+
+export const Responsibilities = styled.p`
+    margin-bottom: 0 !important;
+`
