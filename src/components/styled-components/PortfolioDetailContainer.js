@@ -195,3 +195,27 @@ export const NavigationItem = styled.div`
 export const Responsibilities = styled.p`
     margin-bottom: 0 !important;
 `
+
+export const NavigationWords = styled.div`
+    cursor: pointer;
+`;
+
+export const StyledH1 = styled.h1`
+    text-align: center;
+    margin-bottom: 4.8rem;
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media (min-width: 501px) {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    
+    @media (min-width: 768px) {
+        justify-content: flex-start;
+    }
+`

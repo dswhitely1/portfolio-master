@@ -4,6 +4,7 @@ import {IPortfolioData} from "./portfolioData";
 import {Image} from "../styled-components/Image";
 import {Button} from "../styled-components/Button";
 import {
+    ButtonContainer,
     DetailsContainer,
     DetailsLeftContainer,
     DetailsLeftParagraph,
@@ -12,10 +13,13 @@ import {
     Divider,
     NavigationContainer,
     NavigationItem,
-    Responsibilities
+    NavigationWords,
+    Responsibilities,
+    StyledH1
 } from "../styled-components/PortfolioDetailContainer";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
+import PortfolioButtons from "./PortfolioButtons";
 
 interface IProps {
     project: IPortfolioData,
@@ -65,7 +69,7 @@ function PortfolioDetail({project: {image, responsibilities, image1, image2, tit
 
     return (
         <>
-            <Image detail src={image} alt={title}/>
+            <StyledH1>{`${title} Case Study`}</StyledH1>
             <DetailsContainer>
                 <DetailsLeftContainer>
                     <div>
@@ -77,18 +81,7 @@ function PortfolioDetail({project: {image, responsibilities, image1, image2, tit
                                 {techUsed.map((tech, index) => <li key={index}>{tech}</li>)}
                             </ul>
                         </DetailsTopics>
-                        {github.map(({title, link}, number) => (
-                            <Button secondary spacing>
-                                <a href={link} target='_blank' rel='noopener noreferrer'>
-                                    {title}
-                                </a>
-                            </Button>
-                        ))}
-                        <Button secondary spacing>
-                            <a href={link} target='_blank' rel='noopener noreferrer'>
-                                Visit Website
-                            </a>
-                        </Button>
+                        <PortfolioButtons github={github} link={link} />
                         <Divider mobile/>
                     </div>
                     <DetailsLeftParagraph tablet>{description}</DetailsLeftParagraph>
@@ -113,19 +106,19 @@ function PortfolioDetail({project: {image, responsibilities, image1, image2, tit
                         <LeftArrow mode="mobile" handleClick={() => handleClick(index.prevIndex)}/>
                         <LeftArrow mode="desktop" handleClick={() => handleClick(index.prevIndex)}/>
                     </Link>
-                    <div>
+                    <NavigationWords onClick={() => handleClick(index.prevIndex)}>
                         <h3>{projects[index.prevIndex].title}</h3>
                         <p>Previous Project</p>
-                    </div>
+                    </NavigationWords>
                 </NavigationItem>
                 <NavigationItem right>
                     <Link to={projects[index.nextIndex].url}>
                         <RightArrow mode='mobile' handleClick={() => handleClick(index.nextIndex)}/>
                     </Link>
-                    <div>
+                    <NavigationWords onClick={() => handleClick(index.nextIndex)}>
                         <h3>{projects[index.nextIndex].title}</h3>
                         <p>Next Project</p>
-                    </div>
+                    </NavigationWords>
                     <Link to={projects[index.nextIndex].url}>
                         <RightArrow mode='desktop' handleClick={() => handleClick(index.nextIndex)}/>
                     </Link>

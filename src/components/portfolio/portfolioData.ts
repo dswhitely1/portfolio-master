@@ -8,7 +8,7 @@ import CreateReactProject from '../../assets/CreateReactProject.png'
 import CreateReactProject2 from '../../assets/CreateReactProject 2.png'
 import CreateReactProject1 from '../../assets/CreateReactProject 1.png'
 
-interface IGithub {
+export interface IGithub {
     title: string
     link: string
 }
