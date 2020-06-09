@@ -11,7 +11,8 @@ import {
     DetailsTopics,
     Divider,
     NavigationContainer,
-    NavigationItem, Responsibilities
+    NavigationItem,
+    Responsibilities
 } from "../styled-components/PortfolioDetailContainer";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
@@ -48,6 +49,20 @@ function PortfolioDetail({project: {image, responsibilities, image1, image2, tit
         history.push(data.url)
     }
 
+    function handleLambdaSchoolLink(data: String) {
+        const newStr = data.split('Lambda School.')
+        return (
+            <p>
+                <span>{newStr[0]}</span>
+                <a href='https://www.lambdaschool.com' target='_blank' rel='noopener noreferrer'>Lambda School</a>
+                <span>{`.${newStr[1]}`}</span>
+                <a href='https://medium.com/javascript-in-plain-english/opinionated-redux-setup-with-typescript-eb71eb619716'
+                   target='_blank' rel='noopener noreferrer'>here</a>
+                <span>.</span>
+            </p>
+        )
+    }
+
     return (
         <>
             <Image detail src={image} alt={title}/>
@@ -82,7 +97,7 @@ function PortfolioDetail({project: {image, responsibilities, image1, image2, tit
                 <Divider tablet/>
                 <DetailsRightContainer>
                     <h3>Project Background</h3>
-                    <p>{background}</p>
+                    {title != 'Founder Grants' ? <p>{background}</p> : handleLambdaSchoolLink(background)}
                     <Responsibilities>Responsibilities:</Responsibilities>
                     <ul>
                         {responsibilities.map((listItem, index) => <li key={index}>{listItem}</li>)}

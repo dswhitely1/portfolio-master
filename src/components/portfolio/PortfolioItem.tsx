@@ -26,7 +26,7 @@ function PortfolioItem({reverse, data, setProject}: IProps) {
             <PortfolioRightContainer reverse={reverse}>
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <Button secondary onClick={handleClick}>View Project</Button>
+                <Button secondary onClick={handleClick}>View Case Study</Button>
             </PortfolioRightContainer>
         </PortfolioOverviewContainer>
     )
