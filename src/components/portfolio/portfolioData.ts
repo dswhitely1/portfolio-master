@@ -86,7 +86,7 @@ export const portfolioData: IPortfolioData[] = [
     {
         title: 'Create React Project',
         description: 'Developed a CLI (command line interface) that allows developers to create a React app and install the latest dependencies. In the first 2 weeks of being live, there have been over 800 downloads of the package.',
-        background: 'Back in Month Year, as I pondered what my next side project could be, it occurred to me that I have created a lot of React apps in the past year. Every application had certain dependencies that needed to be added after I did the initial create-react-app. After some research, I decided to write my own CLI (command line interface) that would install all the dependencies that I used in my projects. The result was over 800 downloads of the package within the first 2 weeks of being live. ',
+        background: 'Back in May 2020, as I pondered what my next side project could be, it occurred to me that I have created a lot of React apps in the past year. Every application had certain dependencies that needed to be added after I did the initial create-react-app. After some research, I decided to write my own CLI (command line interface) that would install all the dependencies that I used in my projects. The result was over 800 downloads of the package within the first 2 weeks of being live. ',
         techStack: 'Built using Node.JS',
         techUsed: ['Node.JS', 'JavaScript'],
         responsibilities: ['Created CLI to help bootstrap React Applications'],
