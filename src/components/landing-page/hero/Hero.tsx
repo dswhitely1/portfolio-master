@@ -14,7 +14,9 @@ const Hero = () => (
         <Header>
             <h1>Hey, I’m Donald Whitely and I love building beautiful websites</h1>
             <Button primary>
-                About Me
+                <a href="#about">
+                    About Me
+                </a>
             </Button>
         </Header>
     </HeroContainer>

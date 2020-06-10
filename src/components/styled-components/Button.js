@@ -29,4 +29,8 @@ export const Button = styled.div`
             color: #ffffff;
         }
     `}
+    
+    ${props => props.spacing && css`
+        margin-bottom: 2.4rem;
+    `}
 `;

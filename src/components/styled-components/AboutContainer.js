@@ -17,6 +17,10 @@ export const AboutMeContainer = styled.div`
     justify-content: space-evenly;
     flex-direction: column;
     
+    > p {
+        line-height: 1.875;
+    }
+    
     @media (min-width: 501px) {
         width: 35rem;
         height: 50rem;

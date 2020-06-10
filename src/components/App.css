@@ -1,0 +1,19 @@
+.slide-enter, .slide-exit {
+    transition: opacity 1000ms ease-out;
+}
+
+.slide-enter {
+    opacity: 0;
+}
+
+.slide-enter-active {
+    opacity: 1;
+}
+
+.slide-exit {
+    opacity: 0.8;
+}
+
+.slide-exit-active {
+    opacity: 0;
+}
