@@ -29,7 +29,7 @@ const AnimatedSwitch = ({project, projects, setProject}: IProps) => {
                                      component={PortfolioDetail}/>
                     <EnsureDataRoute path="/portfolio/create-react-project" project={project} projects={projects}
                                      setProject={setProject}
-                                     component={PortfolioDetail}/>} />
+                                     component={PortfolioDetail} />
                     <Route path="/portfolio"
                            render={() => <PortfolioOverview setProject={setProject} projects={projects}/>}/>
                     <Route exact path="/" component={LandingPage}/>
